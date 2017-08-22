@@ -1,0 +1,75 @@
+@import 'font-awesome-4.7.0/css/font-awesome.css';
+header{
+	text-align:center;
+	padding:0.5em;
+	height:2.4em;
+}
+header>div:hover{
+	cursor:pointer;
+}
+.tab{
+	float:left;
+	background-color:#67E8BC;
+	padding: 0.5em 1em;
+	border-radius:5px;
+	margin-right:0.2em;
+}
+.tab.selected-tab{
+	background-color:#3CFF81;
+}
+.tab>i{
+	position:relative;
+	top:-0.4em;
+	right:-0.8em;
+	color:gray;
+}
+.tab>i:hover{
+	color:red;
+}
+.tab>span:first-child
+{
+	font-style:italic;
+}
+.tab>span:nth-child(2)
+{
+	color:gray;
+	border-right:1em;
+}
+#addTab{
+	float:left;
+	background-color:#2FFFF8;
+	padding: 0.5em 1em;
+	border-radius:5px;
+	margin-right:0.2em;
+}
+.chat-text{
+	bottom:260px;
+	left:0px;
+	right:0px;
+	top:0px;
+	position: absolute;
+}
+.chat-write{
+	bottom:0px;
+	left:0px;
+	right:0px;
+	height: 260px;
+	position: absolute;
+}
+.chat{
+	top:0px;
+	left:0px;
+	right:0px;
+	background-color: #CDE8CF;
+	border-radius:20px;
+	height: calc(100vh - 3.4em);
+	position:relative;
+	padding: 30px 30px;
+}
+.App{
+	width:1024px;
+	margin:auto;
+}
+body{
+background-color:lightgray;
+}
