@@ -57,13 +57,12 @@ header>div:hover{
 	position: absolute;
 }
 .chat{
-	top:0px;
-	left:0px;
-	right:0px;
+	top:4em;
+	bottom:0px;
+	width:1024px;
 	background-color: #CDE8CF;
 	border-radius:20px;
-	height: calc(100vh - 3.4em);
-	position:relative;
+	position:absolute;
 	padding: 30px 30px;
 }
 .App{

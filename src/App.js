@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Tab from './Tab.js';
 
 class App extends Component {
 	constructor(props){
@@ -14,20 +14,18 @@ class App extends Component {
 		]};
 	}
 	render() {
+		let cons = this.state.connections;
 		let tabs = this.state.connections.map((o)=>{
-			let closeTab = ()=>{
-				this.setState({connections:this.state.connections.filter((b)=>{return b!==o;})});
-			}
-			let selectTab = ()=>{
-				this.setState({selectedTab:o});
-			}
-			return (<div className={"tab"+(this.state.selectedTab === o ? " selected-tab":"")} onClick={selectTab}><span>{o.channel}</span> <span>{o.user}  </span><i onClick={closeTab} className="fa fa-times" aria-hidden="true"></i></div>)
+			return (<Tab key={JSON.stringify(o)} app={this}  tab={o} selectedTab={this.state.selectedTab} />)
 		});
 		return (
 			<div className="App">
 			<header>
 			{tabs}
-			<div id="addTab" onClick={()=>{this.setState({connections:this.state.connections.concat({user:"",channel:""})})}}><i className="fa fa-plus" aria-hidden="true"></i></div>
+			<div id="addTab" onClick={()=>{
+				if(cons.length === 0 || (cons[cons.length - 1].channel !== ""))
+				this.setState({connections:this.state.connections.concat({user:"",channel:""})})
+			}}><i className="fa fa-plus" aria-hidden="true"></i></div>
 			<div style={{float:"unset"}}></div>
 			</header>
 			<div className="chat">
