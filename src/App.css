@@ -65,12 +65,12 @@ background-color:#B6CEB8;
 	margin-right:0.2em;
 }
 .chat-text{
-	bottom:260px;
+	bottom:200px;
 	left:0px;
 	right:0px;
 	top:0px;
 	position: absolute;
-	overflow-y:scroll;
+	overflow-y:auto;
 }
 .chat-write{
 	bottom:0px;
@@ -87,6 +87,15 @@ background-color:#B6CEB8;
 	background-color: #CDE8CF;
 	border-radius:10px;
 	position:absolute;
+}
+.chat-login{
+	position:absolute;
+	top:40%;
+	left:35%;
+	width:30%;
+	background-color:#B6CEB8;
+	padding:1em;
+	border-radius:10px;
 }
 .send-message>p{
 	position:relative;
@@ -105,6 +114,29 @@ background-color:#B6CEB8;
 .send-message:hover{
 	cursor:pointer;
 }
+#login{
+	float:none;
+	margin-left:35%;
+	border-radius:10px;
+	height:2em;
+	width:30%;
+	background-color:#2FFFF8;
+	border:none;
+	outline:none;
+}
+#login:hover{
+	cursor:pointer;
+}
+input[type="password"],input[type="text"]{
+	float:right;
+}
+.chat-login > div{
+	height:2em;
+}
+label{
+	width:8em;
+	float:left;
+}
 textarea{
 	position:absolute;
 	top:20px;
@@ -112,6 +144,9 @@ textarea{
 	left:20px;
 	width:calc(100% - 160px);
 	border-radius:10px;
+}
+textarea:focus{
+	outline:none;
 }
 
 .App{
