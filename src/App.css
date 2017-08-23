@@ -24,20 +24,23 @@ word-wrap: break-word;
 	float:right;
 }
 .message-sent{
-background-color:#D8F5DA;
+	background-color: #CDE8CF;
 }
 .message-received{
-background-color:#B6CEB8;
+background-color:#C3E8C8;
+}
+.message-admin{
+	background-color:#C6FFFB;
 }
 .tab{
 	float:left;
-	background-color:#67E8BC;
+	background-color:#B6CEB8;
 	padding: 0.5em 1em;
 	border-radius:5px;
 	margin-right:0.2em;
 }
 .tab.selected-tab{
-	background-color:#3CFF81;
+	background-color:#B6FFB5;
 }
 .tab>i{
 	position:relative;
@@ -59,7 +62,7 @@ background-color:#B6CEB8;
 }
 #addTab{
 	float:left;
-	background-color:#2FFFF8;
+	background-color:#C6FFFB;
 	padding: 0.5em 1em;
 	border-radius:5px;
 	margin-right:0.2em;
@@ -81,10 +84,10 @@ background-color:#B6CEB8;
 	padding:20px;
 }
 .chat{
-	top:3.2em;
+	top:2.3em;
 	bottom:0px;
 	width:1024px;
-	background-color: #CDE8CF;
+	background-color:#D8F5DA;
 	border-radius:10px;
 	position:absolute;
 }
@@ -99,17 +102,17 @@ background-color:#B6CEB8;
 }
 .send-message>p{
 	position:relative;
-	top:30%;
+	top:20%;
 	left:30%;
 }
 .send-message{
 	position:absolute;
-	top:20px;
-	bottom:20px;
+	top:60px;
+	bottom:60px;
 	right:20px;
 	width:100px;
 	border-radius:10px;
-	background-color:#2FFFF8;
+	background-color:#C6FFFB;
 }
 .send-message:hover{
 	cursor:pointer;
@@ -120,7 +123,7 @@ background-color:#B6CEB8;
 	border-radius:10px;
 	height:2em;
 	width:30%;
-	background-color:#2FFFF8;
+	background-color:#C6FFFB;
 	border:none;
 	outline:none;
 }
@@ -138,12 +141,14 @@ label{
 	float:left;
 }
 textarea{
+	padding:1em;
 	position:absolute;
 	top:20px;
 	bottom:20px;
 	left:20px;
-	width:calc(100% - 160px);
+	width:calc(100% - 180px);
 	border-radius:10px;
+	height: calc(100% - 65px);
 }
 textarea:focus{
 	outline:none;
@@ -154,5 +159,5 @@ textarea:focus{
 	margin:auto;
 }
 body{
-background-color:lightgray;
+background-color:#D0E8D4;
 }
