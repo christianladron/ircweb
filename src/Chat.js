@@ -32,10 +32,17 @@ class Chat extends Component {
 	render() {
 		let messages = this.props.messages.map(this.createMessage);
 		let newMessage = this.state.newMessage;
+		let users = this.props.users.map((u)=>{
+			return <p className={"user"+(u===this.props.chat.user ? " user-me":"")} key={u}>{u}</p>
+		});
 		if(this.props.chat.user !=="" && this.props.chat.channel !==""){
 		return ( <div className="chat-container" style={{"display":(this.props.selectedTab===this.props.chat)?"block":"none"}}>
 				<div className="chat-text">
 				{messages}
+				</div>
+				<div className="chat-users">
+					<h2>users</h2>
+					{users}
 				</div>
 				<div className="chat-write">
 					<textarea  onKeyPress={this.pushMessage} onChange={this.write} value={newMessage}></textarea>
@@ -45,9 +52,9 @@ class Chat extends Component {
 		}else{
 			return <form onKeyPress={(e)=>{if(e.charCode === 13) this.login()}} className="chat-login" style={{"display":(this.props.selectedTab===this.props.chat)?"block":"none"}}>
 				<div><label htmlFor="channel">Channel</label><input value={this.state.channel} onChange={(e)=>{this.setState({channel:e.target.value})}} id="channel" type="text"/></div>
-				<div><label htmlFor="user">Username</label><input value={this.state.user} onChange={(e)=>{this.setState({user:e.target.value})}} id="user" type="text"/></div>
+				<div><label htmlFor="user">User</label><input value={this.state.user} onChange={(e)=>{this.setState({user:e.target.value})}} id="user" type="text"/></div>
 				{/*<div><label htmlFor="pwd">Password</label><input value={this.state.pwd} onChange={(e)=>{this.setState({pwd:e.target.value})}} id="pwd" type="password"/></div>*/}
-				<div><input type="button" onClick={this.login} value="login" id="login" /></div>
+				<div><input type="button" onClick={this.login} value="join" id="login" /></div>
 				</form>
 		}
 	}

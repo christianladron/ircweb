@@ -20,7 +20,7 @@ class Tab extends Component {
 				app.setState({selectedTab:app.state.connections[index-1]})
 			}
 		}
-		app.setState({messages:app.state.messages.concat({user:"admin",channel:this.props.tab.channel,message:(this.props.tab.user+" leaved the channel"),time:new Date()}),connections:app.state.connections.filter((b)=>{return b!==this.props.tab;})});
+		app.setState({messages:app.state.messages.concat({user:"admin",channel:this.props.tab.channel,message:(this.props.tab.user+" left the channel"),time:new Date()}),connections:app.state.connections.filter((b)=>{return b!==this.props.tab;})});
 	}
 	selectTab(){
 		this.props.app.setState({selectedTab:this.props.tab});

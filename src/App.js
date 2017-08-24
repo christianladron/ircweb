@@ -28,7 +28,12 @@ class App extends Component {
 			let messages=this.state.messages.filter((b)=>{
 				return o.channel===b.channel;
 			});
-			return (<Chat key={JSON.stringify(o)} pushMessage={this.pushMessage} messages={messages} app={this}  chat={o} selectedTab={this.state.selectedTab} login={this.login}/>)
+			let users = this.state.connections.filter((b)=>{
+				return b.channel === o.channel
+			}).map((b)=>{
+				return b.user;
+			});
+			return (<Chat users={users} key={JSON.stringify(o)} pushMessage={this.pushMessage} messages={messages} app={this}  chat={o} selectedTab={this.state.selectedTab} login={this.login}/>)
 		});
 		return (
 			<div className="App">
