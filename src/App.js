@@ -24,6 +24,7 @@ class App extends Component {
 			(mes)=>{this.setState({ messages:mes.map(parseTime) })
 		});
 		io.on("connections",(conns)=>{
+			console.log(conns);
 			this.setState({servConnections:conns});
 		});
 		this.login = this.login.bind(this);

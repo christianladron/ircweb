@@ -15,7 +15,7 @@ io.on('connection', function (socket) {
 		servConnections[socket.id] = conns;
 		let newConns = [];
 		for(item in servConnections){
-			newConns = newConns.concat(item.map(JSON.stringify));
+			newConns = newConns.concat(servConnections[item].map(JSON.stringify));
 		}
 		newConns = newConns.filter(function(el,i,a){if(i==a.indexOf(el))return 1;return 0}).map(JSON.parse);
 		io.emit("connections",newConns)
