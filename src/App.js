@@ -10,7 +10,7 @@ function parseTime(m){
 class App extends Component {
 	constructor(props){
 		super(props);
-		let io = socketio("localhost:4567");
+		let io = socketio(window.location.hostname+":4567");
 		window.io = io;
 		io.onconnect(function(){console.log(arguments);});
 		let initialConnection = {user:"",channel:""};
